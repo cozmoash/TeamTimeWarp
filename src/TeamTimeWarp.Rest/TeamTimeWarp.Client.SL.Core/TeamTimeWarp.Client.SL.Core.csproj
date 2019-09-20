@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{99C8228E-3EFC-48E5-B81B-14ADF7B6166E}</ProjectGuid>
+    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TeamTimeWarp.Client.SL.Core</RootNamespace>
+    <AssemblyName>TeamTimeWarp.Client.SL.Core</AssemblyName>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <SilverlightApplication>false</SilverlightApplication>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+  </PropertyGroup>
+  <!-- This property group is only here to support building this project using the 
+       MSBuild 3.5 toolset. In order to work correctly with this older toolset, it needs 
+       to set the TargetFrameworkVersion to v3.5 -->
+  <PropertyGroup Condition="'$(MSBuildToolsVersion)' == '3.5'">
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\sl4\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp.Silverlight">
+      <HintPath>..\packages\RestSharp.104.1\lib\sl4\RestSharp.Silverlight.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core">
+      <HintPath>$(TargetFrameworkDirectory)System.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Windows.Browser" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\TeamTimeWarp.Client.Core\AgentTypeProvider.cs">
+      <Link>AgentTypeProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\TeamTimeWarp.Client.Core\DelegateCommand.cs">
+      <Link>DelegateCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\TeamTimeWarp.Client.Core\EventArgs.cs">
+      <Link>EventArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\TeamTimeWarp.Client.Core\IAgentTypeProvider.cs">
+      <Link>IAgentTypeProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\TeamTimeWarp.Client.Core\IRestServiceUriFactory.cs">
+      <Link>IRestServiceUriFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\TeamTimeWarp.Client.Core\IUserStateListener.cs">
+      <Link>IUserStateListener.cs</Link>
+    </Compile>
+    <Compile Include="..\TeamTimeWarp.Client.Core\LoginToken.cs">
+      <Link>LoginToken.cs</Link>
+    </Compile>
+    <Compile Include="..\TeamTimeWarp.Client.Core\RestServiceUriFactory.cs">
+      <Link>RestServiceUriFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\TeamTimeWarp.Client.Core\Services\AsyncCompletedEventArgsExtensions.cs">
+      <Link>Services\AsyncCompletedEventArgsExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\TeamTimeWarp.Client.Core\Services\AuthenticationService.cs">
+      <Link>Services\AuthenticationService.cs</Link>
+    </Compile>
+    <Compile Include="..\TeamTimeWarp.Client.Core\Services\GlobalRoomsService.cs">
+      <Link>Services\GlobalRoomsService.cs</Link>
+    </Compile>
+    <Compile Include="..\TeamTimeWarp.Client.Core\Services\Interfaces\AsyncCompletedEventArgs.cs">
+      <Link>Services\Interfaces\AsyncCompletedEventArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\TeamTimeWarp.Client.Core\Services\Interfaces\IUiAccountService.cs">
+      <Link>Services\Interfaces\IUiAccountService.cs</Link>
+    </Compile>
+    <Compile Include="..\TeamTimeWarp.Client.Core\Services\Interfaces\IUiAuthenticationService.cs">
+      <Link>Services\Interfaces\IUiAuthenticationService.cs</Link>
+    </Compile>
+    <Compile Include="..\TeamTimeWarp.Client.Core\Services\Interfaces\IUiGlobalRoomsService.cs">
+      <Link>Services\Interfaces\IUiGlobalRoomsService.cs</Link>
+    </Compile>
+    <Compile Include="..\TeamTimeWarp.Client.Core\Services\Interfaces\IUiRoomService.cs">
+      <Link>Services\Interfaces\IUiRoomService.cs</Link>
+    </Compile>
+    <Compile Include="..\TeamTimeWarp.Client.Core\Services\Interfaces\IUiUserMessageService.cs">
+      <Link>Services\Interfaces\IUiUserMessageService.cs</Link>
+    </Compile>
+    <Compile Include="..\TeamTimeWarp.Client.Core\Services\Interfaces\IUserStateService.cs">
+      <Link>Services\Interfaces\IUserStateService.cs</Link>
+    </Compile>
+    <Compile Include="..\TeamTimeWarp.Client.Core\Services\JsonHelper.cs">
+      <Link>Services\JsonHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\TeamTimeWarp.Client.Core\Services\LoginCompletedEventArgs.cs">
+      <Link>Services\LoginCompletedEventArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\TeamTimeWarp.Client.Core\Services\RoomService.cs">
+      <Link>Services\RoomService.cs</Link>
+    </Compile>
+    <Compile Include="..\TeamTimeWarp.Client.Core\Services\UserMessageService.cs">
+      <Link>Services\UserMessageService.cs</Link>
+    </Compile>
+    <Compile Include="..\TeamTimeWarp.Client.Core\Services\UserStateService.cs">
+      <Link>Services\UserStateService.cs</Link>
+    </Compile>
+    <Compile Include="..\TeamTimeWarp.Client.Core\TimeChangedEventArgs.cs">
+      <Link>TimeChangedEventArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\TeamTimeWarp.Client.Core\TimeWarpStateUserMessage.cs">
+      <Link>TimeWarpStateUserMessage.cs</Link>
+    </Compile>
+    <Compile Include="..\TeamTimeWarp.Client.Core\TokenStore.cs">
+      <Link>TokenStore.cs</Link>
+    </Compile>
+    <Compile Include="..\TeamTimeWarp.Client.Core\UiServiceBase.cs">
+      <Link>UiServiceBase.cs</Link>
+    </Compile>
+    <Compile Include="..\TeamTimeWarp.Client.Core\UserMessageEventArgs.cs">
+      <Link>UserMessageEventArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\TeamTimeWarp.Client.Core\UserStateListener.cs">
+      <Link>UserStateListener.cs</Link>
+    </Compile>
+    <Compile Include="..\TeamTimeWarp.Public.Models.v001\AccountCreationResponse.cs">
+      <Link>AccountCreationResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\TeamTimeWarp.Public.Models.v001\AuthenticationRequest.cs">
+      <Link>AuthenticationRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\TeamTimeWarp.Public.Models.v001\LoginResponse.cs">
+      <Link>LoginResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\TeamTimeWarp.Public.Models.v001\RoomInfo.cs">
+      <Link>RoomInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\TeamTimeWarp.Public.Models.v001\StateInfoRequestType.cs">
+      <Link>StateInfoRequestType.cs</Link>
+    </Compile>
+    <Compile Include="..\TeamTimeWarp.Public.Models.v001\TimeWarpAgent.cs">
+      <Link>TimeWarpAgent.cs</Link>
+    </Compile>
+    <Compile Include="..\TeamTimeWarp.Public.Models.v001\TimeWarpCommand.cs">
+      <Link>TimeWarpCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\TeamTimeWarp.Public.Models.v001\TimeWarpState.cs">
+      <Link>TimeWarpState.cs</Link>
+    </Compile>
+    <Compile Include="..\TeamTimeWarp.Public.Models.v001\UserMessageReceipt.cs">
+      <Link>UserMessageReceipt.cs</Link>
+    </Compile>
+    <Compile Include="..\TeamTimeWarp.Public.Models.v001\UserRoomCommand.cs">
+      <Link>UserRoomCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\TeamTimeWarp.Public.Models.v001\UserStateInfoResponse.cs">
+      <Link>UserStateInfoResponse.cs</Link>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

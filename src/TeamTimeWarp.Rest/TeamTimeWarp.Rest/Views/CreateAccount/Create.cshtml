@@ -1,0 +1,37 @@
+﻿@model TeamTimeWarp.Rest.Controllers.FullAccountCreationInfo
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Sign up for an account</h2>
+
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>FullAccountCreationInfo</legend>
+        
+        <p>
+            <div class="input-large">
+                @Html.TextBoxFor(model => model.DisplayName, new Dictionary<string, object>() { { "placeholder", "Display name" } })
+            </div>
+            @Html.ValidationMessage("DisplayName")
+        </p>
+        <p>
+            <div class="input-large">
+                @Html.TextBoxFor(model => model.EmailAddress, new Dictionary<string, object>() { { "placeholder", "Email Address" } })
+            </div>
+            @Html.ValidationMessage("EmailAddress")
+        </p>
+        <p>
+            <div class="input-large">
+                @Html.PasswordFor(model => model.Password,new Dictionary<string, object>(){{ "placeholder","Password (Optional)"}})
+            </div>
+        </p>
+        
+        <input class="btn btn-large" type="submit" value="Create account">
+    </fieldset>
+}
+

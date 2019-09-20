@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A4DAA660-D2E7-4741-AC71-2109B4902A94}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TeamTimeWarp.Client.Core</RootNamespace>
+    <AssemblyName>TeamTimeWarp.Client.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="RestSharp">
+      <HintPath>..\packages\RestSharp.104.1\lib\net4\Signed\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AgentTypeProvider.cs" />
+    <Compile Include="DelegateCommand.cs" />
+    <Compile Include="IAgentTypeProvider.cs" />
+    <Compile Include="IRestServiceUriFactory.cs" />
+    <Compile Include="EventArgs.cs" />
+    <Compile Include="IUserStateListener.cs" />
+    <Compile Include="Services\AsyncCompletedEventArgsExtensions.cs" />
+    <Compile Include="Services\GlobalRoomsService.cs" />
+    <Compile Include="Services\Interfaces\AsyncCompletedEventArgs.cs" />
+    <Compile Include="Services\Interfaces\IUiGlobalRoomsService.cs" />
+    <Compile Include="Services\Interfaces\IUiRoomService.cs" />
+    <Compile Include="Services\Interfaces\IUiUserMessageService.cs" />
+    <Compile Include="Services\JsonHelper.cs" />
+    <Compile Include="Services\LoginCompletedEventArgs.cs" />
+    <Compile Include="Services\RoomService.cs" />
+    <Compile Include="Services\Interfaces\IUiAccountService.cs" />
+    <Compile Include="Services\Interfaces\IUiAuthenticationService.cs" />
+    <Compile Include="Services\Interfaces\IUserStateService.cs" />
+    <Compile Include="LoginToken.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RestServiceUriFactory.cs" />
+    <Compile Include="Services\UserMessageService.cs" />
+    <Compile Include="Services\UserStateService.cs" />
+    <Compile Include="TimeChangedEventArgs.cs" />
+    <Compile Include="TokenPersister.cs" />
+    <Compile Include="TokenStore.cs" />
+    <Compile Include="Services\AuthenticationService.cs" />
+    <Compile Include="UiServiceBase.cs" />
+    <Compile Include="TimeWarpStateUserMessage.cs" />
+    <Compile Include="UserMessageEventArgs.cs" />
+    <Compile Include="UserStateListener.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="TeamTimeWarp.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TeamTimeWarp.Public.Models.v001\TeamTimeWarp.Public.Models.v001.csproj">
+      <Project>{A511BDA0-B392-466A-835C-37E4F82DFEC1}</Project>
+      <Name>TeamTimeWarp.Public.Models.v001</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

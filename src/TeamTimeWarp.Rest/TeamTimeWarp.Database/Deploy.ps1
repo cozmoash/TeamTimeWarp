@@ -1,0 +1,1 @@
+﻿& .\TeamTimeWarp.Database.exe | Write-Host

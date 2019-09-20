@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <version>0.00</version>
+    <authors>Ashley Aberneithy</authors>
+    <owners>Ashley Aberneithy</owners>
+    <id>TeamTimeWarp.VsPackage</id>
+    <title>TeamTimeWarp.VsPackage</title>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>TeamTimeWarp.VsPackage</description>
+    <copyright>Copyright Ashley Aberneithy 2013</copyright>
+  </metadata>
+  <files>
+    <file src="src\TeamTimeWarp.Rest\TeamTimeWarp.VsPackage\bin\Release\**"/> 
+  </files>
+</package>

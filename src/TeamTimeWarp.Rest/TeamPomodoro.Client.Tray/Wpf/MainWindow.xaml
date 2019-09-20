@@ -1,0 +1,29 @@
+﻿<Window x:Class="TimeManager.Client.Tray.Wpf.MainWindow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+            xmlns:Wpf="clr-namespace:TimeManager.Client.Tray.Wpf"
+        xmlns:wpf="clr-namespace:TeamTimeWarp.Client.Tray.Wpf"
+        Height="400" Width="210"  Title="Team Time Warp" WindowStyle="ToolWindow">
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="*"/>
+      <RowDefinition Height="50"/>
+    </Grid.RowDefinitions>
+    <ScrollViewer Grid.Row="0" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+      <StackPanel>
+        <ContentControl Visibility="{Binding LoginVisibility}">
+          <wpf:LoginControl DataContext="{Binding LoginViewModel}"/>
+        </ContentControl>
+        <ContentControl Visibility="{Binding RoomNavigationVisiblity}">
+          <StackPanel>
+            <Wpf:RoomNavigationUserControl DataContext="{Binding RoomNavigationViewModel}"/>
+            <Wpf:RoomStateControl DataContext="{Binding RoomStateViewModel}"/>
+          </StackPanel>
+        </ContentControl>
+      </StackPanel>
+    </ScrollViewer>
+    <ContentControl Grid.Row="1" Visibility="{Binding RoomNavigationVisiblity}">
+    <wpf:StartStopControl DataContext="{Binding StartStopViewModel}" />
+    </ContentControl>
+  </Grid>
+</Window>

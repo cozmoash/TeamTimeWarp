@@ -1,0 +1,29 @@
+﻿@model TeamTimeWarp.Rest.Controllers.AccountCreationInfo
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>AccountCreationInfo</legend>
+
+        <p>
+            <input type="text" id="EmailAddress" placeholder="Email">
+            <input type="password" id="Password" placeholder="Password (Optional)">
+            <button type="submit" class="btn" value="Save">Create Account</button>
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

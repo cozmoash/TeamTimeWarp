@@ -1,0 +1,8 @@
+
+1)refactor any service code that should be in domain
+
+
+
+avatars
+bbadges
+communicationS

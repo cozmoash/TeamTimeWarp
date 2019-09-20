@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7A63622D-D608-45EB-9FA6-7AB27E95EE3A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TeamTimeWarp.Server.IntegrationTests</RootNamespace>
+    <AssemblyName>TeamTimeWarp.Server.IntegrationTests</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DbUp">
+      <HintPath>..\packages\dbup.2.0.115\lib\NET35\DbUp.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>..\packages\NUnit.2.6.2\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp">
+      <HintPath>..\packages\RestSharp.104.1\lib\net4\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Accounts\WhenAnAccountIsCreatedWithNoPassword.cs" />
+    <Compile Include="Accounts\WhenANewQuickLoginAccountIsCreated.cs" />
+    <Compile Include="Accounts\WhenAUserLogsIn.cs" />
+    <Compile Include="Accounts\WhenAUserLogsInWithAnIncorrectToken.cs" />
+    <Compile Include="Accounts\WhenAUserLogsInWithTheIncorrectPassword.cs" />
+    <Compile Include="Accounts\WhenAUserLogsOut.cs" />
+    <Compile Include="IntegrationTestBase.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Accounts\WhenANewAccountIsCreated.cs" />
+    <Compile Include="Room\MessagingIntegrationTestBase.cs" />
+    <Compile Include="Room\WhenAQuickLoginUserJoinsARoom.cs" />
+    <Compile Include="Room\WhenARoomSearchIsPerformed.cs" />
+    <Compile Include="Room\WhenAUserGetsTheRoomsTheyAreIn.cs" />
+    <Compile Include="Room\WhenAUserJoinsANewRoom.cs" />
+    <Compile Include="Room\WhenAUserJoinsARoom.cs" />
+    <Compile Include="Room\WhenAUserMessagesANonExistantUser.cs" />
+    <Compile Include="Room\WhenAUserMessagesAnotherUser.cs" />
+    <Compile Include="Room\WhenAUserMessagesAnotherUserNotInTheSameRoom.cs" />
+    <Compile Include="UserState\RestProgerssTest.cs" />
+    <Compile Include="UserState\WhenAUserStartsToWorkFromANewAgent.cs" />
+    <Compile Include="UserState\WorkProgressTest.cs" />
+    <Compile Include="UserState\WhenAUserStartsToRest.cs" />
+    <Compile Include="UserState\WhenAUserStartsToWork.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TeamTimeWarp.Database\TeamTimeWarp.Database.csproj">
+      <Project>{B2429CC5-0AAA-4564-A4A7-9FCED7393D79}</Project>
+      <Name>TeamTimeWarp.Database</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TeamTimeWarp.Public.Models.v001\TeamTimeWarp.Public.Models.v001.csproj">
+      <Project>{A511BDA0-B392-466A-835C-37E4F82DFEC1}</Project>
+      <Name>TeamTimeWarp.Public.Models.v001</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TeamTimeWarp.UnitTests\TeamTimeWarp.UnitTests.csproj">
+      <Project>{E0240C1B-5572-4FB1-823F-4ED2BB601310}</Project>
+      <Name>TeamTimeWarp.UnitTests</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
