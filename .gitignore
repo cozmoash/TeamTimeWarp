@@ -1,0 +1,9 @@
+obj
+bin
+/src/_ReSharper.TeamPomodoro.Domain/XmlIndex/FSharp.Core.xml/*.bin
+*.bin
+/src/_ReSharper.TeamPomodoro.Domain
+*.user
+*_Resharper*
+*.log
+*.log.*
